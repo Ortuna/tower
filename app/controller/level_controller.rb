@@ -6,8 +6,6 @@ class LevelController < UIViewController
 
     @level.backgroundColor = UIColor.whiteColor
     view.addSubview @level
-    @gravity = B2Vec.new
-    p @gravity
   end
 
 end
