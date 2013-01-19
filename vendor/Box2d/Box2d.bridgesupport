@@ -1,0 +1,367 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct type='{b2ContactFeature=&quot;indexA&quot;C&quot;indexB&quot;C&quot;typeA&quot;C&quot;typeB&quot;C}' name='b2ContactFeature'>
+<field type='C' declared_type='uint8' name='indexA'/>
+<field type='C' declared_type='uint8' name='indexB'/>
+<field type='C' declared_type='uint8' name='typeA'/>
+<field type='C' declared_type='uint8' name='typeB'/>
+</struct>
+<struct type='{b2ContactImpulse=&quot;normalImpulses&quot;[2f]&quot;tangentImpulses&quot;[2f]&quot;count&quot;i}' name='b2ContactImpulse'>
+<field type='[2f]' declared_type='float32*' name='normalImpulses'/>
+<field type='[2f]' declared_type='float32*' name='tangentImpulses'/>
+<field type='i' declared_type='int32' name='count'/>
+</struct>
+<struct type='{b2ContactRegister=&quot;createFcn&quot;^?&quot;destroyFcn&quot;^?&quot;primary&quot;B}' name='b2ContactRegister'>
+<field type='^?' declared_type='b2ContactCreateFcn*' name='createFcn' function_pointer='true'>
+<arg type='^i' declared_type='int*'/>
+<arg type='i' declared_type='int32'/>
+<arg type='^i' declared_type='int*'/>
+<arg type='i' declared_type='int32'/>
+<arg type='^i' declared_type='int*'/>
+<retval type='^i' declared_type='int*'/>
+</field>
+<field type='^?' declared_type='b2ContactDestroyFcn*' name='destroyFcn' function_pointer='true'>
+<arg type='^i' declared_type='int*'/>
+<arg type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
+</field>
+<field type='B' declared_type='_Bool' name='primary'/>
+</struct>
+<struct type='{b2Filter=&quot;b2Filter&quot;?&quot;maskBits&quot;S&quot;groupIndex&quot;s}' name='b2Filter'>
+<field type='?' declared_type='int ()' name='b2Filter'/>
+<field type='S' declared_type='uint16' name='maskBits'/>
+<field type='s' declared_type='int16' name='groupIndex'/>
+</struct>
+<struct type='{b2Mat22=&quot;b2Mat22&quot;?}' name='b2Mat22'>
+<field type='?' declared_type='int ()' name='b2Mat22'/>
+</struct>
+<struct type='{b2Profile=&quot;step&quot;f&quot;collide&quot;f&quot;solve&quot;f&quot;solveInit&quot;f&quot;solveVelocity&quot;f&quot;solvePosition&quot;f&quot;broadphase&quot;f&quot;solveTOI&quot;f}' name='b2Profile'>
+<field type='f' declared_type='float32' name='step'/>
+<field type='f' declared_type='float32' name='collide'/>
+<field type='f' declared_type='float32' name='solve'/>
+<field type='f' declared_type='float32' name='solveInit'/>
+<field type='f' declared_type='float32' name='solveVelocity'/>
+<field type='f' declared_type='float32' name='solvePosition'/>
+<field type='f' declared_type='float32' name='broadphase'/>
+<field type='f' declared_type='float32' name='solveTOI'/>
+</struct>
+<struct type='{b2Rot=&quot;b2Rot&quot;?}' name='b2Rot'>
+<field type='?' declared_type='int ()' name='b2Rot'/>
+</struct>
+<struct type='{b2SimplexCache=&quot;metric&quot;f&quot;count&quot;S&quot;indexA&quot;[3C]&quot;indexB&quot;[3C]}' name='b2SimplexCache'>
+<field type='f' declared_type='float32' name='metric'/>
+<field type='S' declared_type='uint16' name='count'/>
+<field type='[3C]' declared_type='uint8*' name='indexA'/>
+<field type='[3C]' declared_type='uint8*' name='indexB'/>
+</struct>
+<struct type='{b2StackEntry=&quot;data&quot;*&quot;size&quot;i&quot;usedMalloc&quot;B}' name='b2StackEntry'>
+<field type='*' declared_type='char*' name='data'/>
+<field type='i' declared_type='int32' name='size'/>
+<field type='B' declared_type='_Bool' name='usedMalloc'/>
+</struct>
+<struct type='{b2TOIOutput=&quot;state&quot;i&quot;t&quot;f}' name='b2TOIOutput'>
+<field type='i' declared_type='enum State' name='state'/>
+<field type='f' declared_type='float32' name='t'/>
+</struct>
+<struct type='{b2TimeStep=&quot;dt&quot;f&quot;inv_dt&quot;f&quot;dtRatio&quot;f&quot;velocityIterations&quot;i&quot;positionIterations&quot;i&quot;warmStarting&quot;B}' name='b2TimeStep'>
+<field type='f' declared_type='float32' name='dt'/>
+<field type='f' declared_type='float32' name='inv_dt'/>
+<field type='f' declared_type='float32' name='dtRatio'/>
+<field type='i' declared_type='int32' name='velocityIterations'/>
+<field type='i' declared_type='int32' name='positionIterations'/>
+<field type='B' declared_type='_Bool' name='warmStarting'/>
+</struct>
+<struct type='{b2TreeNode=&quot;IsLeaf&quot;?&quot;userData&quot;^v&quot;&quot;(?=&quot;parent&quot;i&quot;next&quot;i)&quot;child1&quot;i&quot;child2&quot;i&quot;height&quot;i}' name='b2TreeNode'>
+<field type='?' declared_type='_Bool ()' name='IsLeaf'/>
+<field type='^v' declared_type='void*' name='userData'/>
+<field type='(?=&quot;parent&quot;i&quot;next&quot;i)' declared_type='union b2TreeNode::'/>
+<field type='i' declared_type='int32' name='child1'/>
+<field type='i' declared_type='int32' name='child2'/>
+<field type='i' declared_type='int32' name='height'/>
+</struct>
+<struct type='{b2Vec2=&quot;b2Vec2&quot;?}' name='b2Vec2'>
+<field type='?' declared_type='int ()' name='b2Vec2'/>
+</struct>
+<struct type='{b2Vec3=&quot;b2Vec3&quot;?}' name='b2Vec3'>
+<field type='?' declared_type='int ()' name='b2Vec3'/>
+</struct>
+<struct type='{b2Version=&quot;major&quot;i&quot;minor&quot;i&quot;revision&quot;i}' name='b2Version'>
+<field type='i' declared_type='int32' name='major'/>
+<field type='i' declared_type='int32' name='minor'/>
+<field type='i' declared_type='int32' name='revision'/>
+</struct>
+<constant const='true' type='i' declared_type='int' name='SCALE'/>
+<constant type='B' declared_type='_Bool' name='b2AABB'/>
+<constant type='i' declared_type='int' name='b2BlockAllocator'/>
+<constant type='i' declared_type='int' name='b2Body'/>
+<constant type='i' declared_type='int' name='b2BroadPhase'/>
+<constant type='i' declared_type='int' name='b2ChainAndCircleContact'/>
+<constant type='i' declared_type='int' name='b2ChainAndPolygonContact'/>
+<constant type='i' declared_type='int' name='b2ChainShape'/>
+<constant type='i' declared_type='int' name='b2CircleContact'/>
+<constant type='i' declared_type='int' name='b2CircleShape'/>
+<constant type='i' declared_type='int' name='b2Contact'/>
+<constant type='i' declared_type='int' name='b2ContactFilter'/>
+<constant type='i' declared_type='int' name='b2ContactListener'/>
+<constant type='i' declared_type='int' name='b2ContactManager'/>
+<constant type='i' declared_type='int' name='b2ContactSolver'/>
+<constant type='i' declared_type='int' name='b2Controller'/>
+<constant type='i' declared_type='int' name='b2DestructionListener'/>
+<constant type='v' declared_type='void' name='b2DistanceJoint'/>
+<constant type='i' declared_type='int32' name='b2DistanceProxy'/>
+<constant type='i' declared_type='int' name='b2Draw'/>
+<constant type='i' declared_type='int' name='b2DynamicTree'/>
+<constant type='i' declared_type='int' name='b2EdgeAndCircleContact'/>
+<constant type='i' declared_type='int' name='b2EdgeAndPolygonContact'/>
+<constant type='i' declared_type='int' name='b2EdgeShape'/>
+<constant type='i' declared_type='int' name='b2Fixture'/>
+<constant type='i' declared_type='int' name='b2FrictionJoint'/>
+<constant type='i' declared_type='int' name='b2GearJoint'/>
+<constant type='i' declared_type='int' name='b2Island'/>
+<constant type='i' declared_type='int' name='b2Joint'/>
+<constant type='i' declared_type='int' name='b2MotorJoint'/>
+<constant type='i' declared_type='int' name='b2MouseJoint'/>
+<constant type='i' declared_type='int' name='b2PolygonAndCircleContact'/>
+<constant type='i' declared_type='int' name='b2PolygonContact'/>
+<constant type='i' declared_type='int' name='b2PolygonShape'/>
+<constant type='i' declared_type='int' name='b2PrismaticJoint'/>
+<constant type='i' declared_type='int' name='b2PulleyJoint'/>
+<constant type='i' declared_type='int' name='b2QueryCallback'/>
+<constant type='i' declared_type='int' name='b2RayCastCallback'/>
+<constant type='i' declared_type='int' name='b2RevoluteJoint'/>
+<constant type='i' declared_type='int' name='b2Rope'/>
+<constant type='i' declared_type='int' name='b2RopeJoint'/>
+<constant type='i' declared_type='int' name='b2Shape'/>
+<constant type='i' declared_type='int' name='b2StackAllocator'/>
+<constant type='i' declared_type='int' name='b2Timer'/>
+<constant const='true' type='{b2Vec2=?}' declared_type='struct b2Vec2' name='b2Vec2_zero'/>
+<constant type='i' declared_type='int' name='b2WeldJoint'/>
+<constant type='i' declared_type='int' name='b2WheelJoint'/>
+<constant type='i' declared_type='int' name='b2World'/>
+<constant const='true' type='i' declared_type='int32' name='b2_blockSizes'/>
+<constant const='true' type='i' declared_type='int32' name='b2_chunkArrayIncrement'/>
+<constant const='true' type='i' declared_type='int32' name='b2_chunkSize'/>
+<constant const='true' type='i' declared_type='int32' name='b2_maxBlockSize'/>
+<constant const='true' type='i' declared_type='int32' name='b2_maxStackEntries'/>
+<constant const='true' type='C' declared_type='uint8' name='b2_nullFeature'/>
+<constant const='true' type='i' declared_type='int32' name='b2_stackSize'/>
+<constant type='{b2Version=iii}' declared_type='struct b2Version' name='b2_version'/>
+<constant type='{b2Vec2=?}' declared_type='struct b2Vec2' name='operator'/>
+<enum value='56' name='PTM_RATIO'/>
+<enum value='0.1f' name='b2_aabbExtension'/>
+<enum value='2.0f' name='b2_aabbMultiplier'/>
+<enum value='1' name='b2_addState'/>
+<enum value='0.034906588' name='b2_angularSleepTolerance'/>
+<enum value='0.034906588' name='b2_angularSlop'/>
+<enum value='0.2f' name='b2_baumgarte'/>
+<enum value='2' name='b2_dynamicBody'/>
+<enum value='1' name='b2_kinematicBody'/>
+<enum value='0.01f' name='b2_linearSleepTolerance'/>
+<enum value='0.005f' name='b2_linearSlop'/>
+<enum value='0.13962635' name='b2_maxAngularCorrection'/>
+<enum value='0.2f' name='b2_maxLinearCorrection'/>
+<enum value='2' name='b2_maxManifoldPoints'/>
+<enum value='8' name='b2_maxPolygonVertices'/>
+<enum value='1.5707964' name='b2_maxRotation'/>
+<enum value='2.4674013' name='b2_maxRotationSquared'/>
+<enum value='8' name='b2_maxSubSteps'/>
+<enum value='32' name='b2_maxTOIContacts'/>
+<enum value='2.0f' name='b2_maxTranslation'/>
+<enum value='4' name='b2_maxTranslationSquared'/>
+<enum value='-1' name='b2_nullNode'/>
+<enum value='0' name='b2_nullState'/>
+<enum value='2' name='b2_persistState'/>
+<enum value='3.14159265359f' name='b2_pi'/>
+<enum value='0.0099999998' name='b2_polygonRadius'/>
+<enum value='3' name='b2_removeState'/>
+<enum value='0' name='b2_staticBody'/>
+<enum value='0.5f' name='b2_timeToSleep'/>
+<enum value='0.75f' name='b2_toiBaugarte'/>
+<enum value='1.0f' name='b2_velocityThreshold'/>
+<enum value='1' name='e_atLowerLimit'/>
+<enum value='2' name='e_atUpperLimit'/>
+<enum value='3' name='e_distanceJoint'/>
+<enum value='3' name='e_equalLimits'/>
+<enum value='9' name='e_frictionJoint'/>
+<enum value='6' name='e_gearJoint'/>
+<enum value='0' name='e_inactiveLimit'/>
+<enum value='11' name='e_motorJoint'/>
+<enum value='5' name='e_mouseJoint'/>
+<enum value='2' name='e_prismaticJoint'/>
+<enum value='4' name='e_pulleyJoint'/>
+<enum value='1' name='e_revoluteJoint'/>
+<enum value='10' name='e_ropeJoint'/>
+<enum value='0' name='e_unknownJoint'/>
+<enum value='8' name='e_weldJoint'/>
+<enum value='7' name='e_wheelJoint'/>
+<function name='b2Alloc'>
+<arg type='i' declared_type='int32' name='size'/>
+<retval type='^v' declared_type='void*'/>
+</function>
+<function name='b2ClipSegmentToLine'>
+<arg type='i' declared_type='int' name='vOut'/>
+<arg type='i' declared_type='int' name='vIn'/>
+<arg const='true' type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+<retval type='i' declared_type='int32'/>
+</function>
+<function name='b2CollideCircles'>
+<arg type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold'/>
+<arg const='true' type='^i' declared_type='int*' name='circleA'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2CollideEdgeAndCircle'>
+<arg type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold'/>
+<arg const='true' type='^i' declared_type='int*' name='polygonA'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2CollideEdgeAndPolygon'>
+<arg type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold'/>
+<arg const='true' type='^i' declared_type='int*' name='edgeA'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2CollidePolygonAndCircle'>
+<arg type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold'/>
+<arg const='true' type='^i' declared_type='int*' name='polygonA'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2CollidePolygons'>
+<arg type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold'/>
+<arg const='true' type='^i' declared_type='int*' name='polygonA'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function inline='true' name='b2Cross'>
+<arg const='true' type='f' declared_type='float32' name='s'/>
+<arg const='true' type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+<retval type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+</function>
+<function name='b2Distance'>
+<arg type='^{b2DistanceOutput={b2Vec2=?}{b2Vec2=?}fi}' declared_type='struct b2DistanceOutput*' name='output'/>
+<arg type='^{b2SimplexCache=fS[3C][3C]}' declared_type='struct b2SimplexCache*' name='cache'/>
+<arg const='true' type='^{b2DistanceInput={b2DistanceProxy=????{b2Vec2=?}?{b2Vec2=?}[2{b2Vec2=?}]^{b2Vec2}}{b2DistanceProxy=????{b2Vec2=?}?{b2Vec2=?}[2{b2Vec2=?}]^{b2Vec2}}{b2Transform=?{b2Rot=?}}{b2Transform=?{b2Rot=?}}B}' declared_type='struct b2DistanceInput*' name='input'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function inline='true' name='b2Dot'>
+<arg const='true' type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+<retval type='f' declared_type='float32'/>
+</function>
+<function name='b2Free'>
+<arg type='^v' declared_type='void*' name='mem'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2GetPointStates'>
+<arg type='^i' declared_type='enum b2PointState*' name='state1'/>
+<arg type='^i' declared_type='enum b2PointState*' name='state2'/>
+<arg const='true' type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold1'/>
+<arg const='true' type='^{b2Manifold=i{b2Vec2=?}{b2Vec2=?}ii}' declared_type='struct b2Manifold*' name='manifold2'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function inline='true' name='b2InvSqrt'>
+<arg type='f' declared_type='float32' name='x'/>
+<retval type='f' declared_type='float32'/>
+</function>
+<function inline='true' name='b2IsValid'>
+<arg type='f' declared_type='float32' name='x'/>
+<retval type='B' declared_type='_Bool'/>
+</function>
+<function variadic='true' name='b2Log'>
+<arg const='true' type='*' declared_type='char*' name='string'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function inline='true' name='b2MixFriction'>
+<arg type='f' declared_type='float32' name='friction1'/>
+<arg type='f' declared_type='float32' name='friction2'/>
+<retval type='f' declared_type='float32'/>
+</function>
+<function inline='true' name='b2MixRestitution'>
+<arg type='f' declared_type='float32' name='restitution1'/>
+<arg type='f' declared_type='float32' name='restitution2'/>
+<retval type='f' declared_type='float32'/>
+</function>
+<function inline='true' name='b2Mul'>
+<arg const='true' type='{b2Mat22=?}' declared_type='struct b2Mat22'/>
+<retval type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+</function>
+<function inline='true' name='b2MulT'>
+<arg const='true' type='{b2Mat22=?}' declared_type='struct b2Mat22'/>
+<retval type='{b2Vec2=?}' declared_type='struct b2Vec2'/>
+</function>
+<function inline='true' name='b2PairLessThan'>
+<arg const='true' type='i' declared_type='int'/>
+<retval type='B' declared_type='_Bool'/>
+</function>
+<function name='b2TestOverlap'>
+<arg const='true' type='^i' declared_type='int*' name='shapeA'/>
+<arg type='i' declared_type='int32' name='indexA'/>
+<arg const='true' type='^i' declared_type='int*' name='shapeB'/>
+<arg type='i' declared_type='int32' name='indexB'/>
+<arg const='true' type='{b2Transform=?{b2Rot=?}}' declared_type='struct b2Transform'/>
+<retval type='B' declared_type='_Bool'/>
+</function>
+<function name='b2TimeOfImpact'>
+<arg type='^{b2TOIOutput=if}' declared_type='struct b2TOIOutput*' name='output'/>
+<arg const='true' type='^i' declared_type='int*' name='input'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='b2Vec2'>
+<retval type='i' declared_type='int'/>
+</function>
+<function name='m_vertices'>
+<retval type='i' declared_type='int'/>
+</function>
+<class name='Box'>
+<method selector='addBody'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='body'>
+<retval type='^i' declared_type='int*'/>
+</method>
+<method selector='destroyBody'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBody:'>
+<arg index='0' type='^i' declared_type='int*' name='body'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setWorld:'>
+<arg index='0' type='^i' declared_type='int*' name='world'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setWorldBridge:'>
+<arg index='0' type='@' declared_type='World*' name='worldBridge'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='world'>
+<retval type='^i' declared_type='int*'/>
+</method>
+<method selector='worldBridge'>
+<retval type='@' declared_type='World*'/>
+</method>
+</class>
+<class name='World'>
+<method selector='addBox:'>
+<arg index='0' type='@' declared_type='Box*' name='physicalView'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='createBounds'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setWorld:'>
+<arg index='0' type='^i' declared_type='int*' name='world'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setupWorld'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='tick'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='world'>
+<retval type='^i' declared_type='int*'/>
+</method>
+</class>
+</signatures>

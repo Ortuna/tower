@@ -4,7 +4,7 @@ class Level < UIView
     @world = World.new
     @world.setupWorld
     (1..20).each do |item|
-        @blue_view = UIView.alloc.initWithFrame CGRectMake(5 + item*2, 5 + item*2, 25, 25)
+        @blue_view = Box.alloc.initWithFrame CGRectMake(5 + item*2, 5 + item*2, 25, 25)
         @blue_view.backgroundColor = UIColor.blueColor
         self.addSubview @blue_view
         @world.addBox @blue_view
