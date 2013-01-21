@@ -15,5 +15,6 @@
 
 -(void) destroyBody;
 -(void) addBody;
+-(bool) isAwake;
 @end
 #endif

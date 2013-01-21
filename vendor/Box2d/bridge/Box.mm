@@ -15,4 +15,10 @@
   {
     [self.worldBridge addBox: self];
   }
+
+  -(bool) isAwake
+  {
+    self.body->IsAwake();
+  }
+
 @end

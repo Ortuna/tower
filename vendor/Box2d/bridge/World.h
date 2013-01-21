@@ -1,7 +1,7 @@
 #import "../Box2D/Box2D.h"
 #import "Box.h"
 
-#define PTM_RATIO 56
+#define PTM_RATIO 16
 const int SCALE = 24;
 
 #pragma once
@@ -13,10 +13,14 @@ const int SCALE = 24;
 
 @interface World : NSObject
 @property b2World *world;
--(void) setupWorld;
+@property CGSize  worldSize;
+
+-(void) setupWorld:(float)width
+            height:(float)height;
 -(void) addBox:(Box *)physicalView;
 -(void) tick;
 -(void) createBounds;
+-(void) setupGravity;
 @end
 
 #endif

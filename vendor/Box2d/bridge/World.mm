@@ -3,24 +3,32 @@
 @implementation World
   @synthesize world;
 
--(void)setupWorld {
-  b2Vec2 gravity;
-  gravity.Set(0.0f, -25.00f);
-  self.world = new b2World(gravity);
+-(void) setupWorld:(float)width
+            height:(float)height
+{
+  self.worldSize = CGSizeMake(width, height);
+  [self setupGravity];
   [self createBounds];
+}
+
+-(void) setupGravity
+{
+  b2Vec2 gravity;
+  gravity.Set(0.0f, -50.00f);
+  self.world = new b2World(gravity);
 }
 
 -(void) createBounds
 {
   b2BodyDef groundBodyDef;
-  CGSize screenSize = UIScreen.mainScreen.bounds.size;
+  CGSize screenSize = self.worldSize;
   b2Body* groundBody = world->CreateBody(&groundBodyDef);
 
   // Define the ground box shape.
   b2EdgeShape groundBox;
 
   // bottom
-  groundBox.Set(b2Vec2(0,1), b2Vec2(screenSize.width/PTM_RATIO,1));
+  groundBox.Set(b2Vec2(0, 0), b2Vec2(screenSize.width/PTM_RATIO, 0));
   groundBody->CreateFixture(&groundBox, 0);
 
   // top
@@ -67,7 +75,7 @@
 
   b2FixtureDef fixtureDef;
   fixtureDef.shape       = &dynamicBox;
-  fixtureDef.density     = 1.0f;
+  fixtureDef.density     = 3.0f;
   fixtureDef.friction    = 0.5f;
   fixtureDef.restitution = 0.5f; // 0 is a lead ball, 1 is a super bouncy ball
   body->CreateFixture(&fixtureDef);
