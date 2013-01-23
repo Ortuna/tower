@@ -1,19 +1,18 @@
 class LevelController < UIViewController
   def viewDidLoad
     super
-    self.view.addSubview createLevelView
+    self.view.addSubview levelView
+    self.view.addSubview overlayView
   end
 
-  def createLevelView
-    level = createView(Level, screenSize)
-    level.backgroundColor = UIColor.blackColor
-    level
+  def levelView
+    @level ||= createView(Level, screenSize)
+    @level
   end
 
-  def createOverlayView
-    overlay = creaetView(Overlay, screenSize)
-    overlay.backgroundColor = UIColor.blackColor
-    overlay
+  def overlayView
+    @overlay ||= createView(Overlay, screenSize)
+    @overlay
   end
 
   def screenSize

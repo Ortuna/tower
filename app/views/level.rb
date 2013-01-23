@@ -1,7 +1,6 @@
 class Level < UIScrollView
   def initWithFrame(*args)
     super
-    @box_pixel_scale = 24
     setupLevel
     setupWorld
     createBoxes
@@ -23,9 +22,7 @@ class Level < UIScrollView
     end
   end
 
-  def timeHandler(sender)
-    @world.tick
-  end
+  def timeHandler(sender); @world.tick; end
 
   def setupWorld
     @world = World.new
@@ -39,18 +36,25 @@ class Level < UIScrollView
       userInfo:nil,
       repeats:true
     )
+    #Run timers while scrolling
+    #http://stackoverflow.com/questions/605027/uiscrollview-pauses-nstimer-until-scrolling-finishes
+    NSRunLoop.mainRunLoop.addTimer(@timer, forMode: NSRunLoopCommonModes)
+  end
+
+  def setupLevel
+    @box_pixel_scale = 24
+    self.backgroundColor = UIColor.blackColor
+    width  = UIScreen.mainScreen.bounds.size.width
+    height = UIScreen.mainScreen.bounds.size.height * 3
+    size   = CGSizeMake(width, height)
+    self.setContentSize(size)
+    self.setShowsHorizontalScrollIndicator false
+    self.setShowsVerticalScrollIndicator false
   end
 
   def scrollToBottom
     bottomOffset = CGPointMake(0, self.contentSize.height-self.bounds.size.height)
     self.setContentOffset(bottomOffset, anitmated: false)
-  end
-
-  def setupLevel
-    width  = UIScreen.mainScreen.bounds.size.width
-    height = UIScreen.mainScreen.bounds.size.height * 3
-    size   = CGSizeMake(width, height)
-    self.setContentSize(size)
   end
 
   def touchesEnded(touches, withEvent: event)
