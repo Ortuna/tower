@@ -9,4 +9,6 @@ Motion::Project::App.setup do |app|
   app.vendor_project 'vendor/Box2d', :static
   app.provisioning_profile = '/Users/ortuna/Library/MobileDevice/Provisioning Profiles/80C4CAB5-526E-40C2-B79C-B1972B07BDDA.mobileprovision'
   app.codesign_certificate = 'iPhone Developer: Sumeet Singh (529LJXN5H6)'
+  app.info_plist['UIStatusBarHidden'] = true
+  # app.info_plist['UILaunchImageFile'] = 'Default@2x.png'
 end
