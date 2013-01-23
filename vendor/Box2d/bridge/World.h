@@ -15,12 +15,15 @@ const int SCALE = 24;
 @property b2World *world;
 @property CGSize  worldSize;
 
--(void) setupWorld:(float)width
-            height:(float)height;
 -(void) addBox:(Box *)physicalView;
 -(void) tick;
 -(void) createBounds;
 -(void) setupGravity;
+
+-(void) setupWorld:(float)width
+            height:(float)height;
+-(void) createEdge:(b2Vec2) v1
+               v2: (b2Vec2) v2;
 @end
 
 #endif

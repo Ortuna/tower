@@ -20,37 +20,34 @@
 
 -(void) createBounds
 {
-  b2BodyDef groundBodyDef;
+
   CGSize screenSize = self.worldSize;
-  b2Body* groundBody = world->CreateBody(&groundBodyDef);
 
-  // Define the ground box shape.
-  b2EdgeShape groundBox;
+  float width  = screenSize.width/PTM_RATIO;
+  float height = screenSize.height/PTM_RATIO;
+  float ratio  = -(height/1.53333);
 
-  // bottom
-  groundBox.Set(b2Vec2(0, 0), b2Vec2(screenSize.width/PTM_RATIO, 0));
-  groundBody->CreateFixture(&groundBox, 0);
+  //bottom
+  [self createEdge: b2Vec2(0, ratio)
+                v2: b2Vec2(width, ratio)];
+  //top
+  [self createEdge: b2Vec2(0,height)
+                v2: b2Vec2(width, height)];
+  //left
+  [self createEdge: b2Vec2(0,height)
+                v2: b2Vec2(0,ratio)];
+  //right
+  [self createEdge: b2Vec2(width, height)
+                v2: b2Vec2(width, ratio)];
+}
 
-  // top
-  groundBox.Set(
-                b2Vec2(0,screenSize.height/PTM_RATIO),
-                b2Vec2((screenSize.width/PTM_RATIO),screenSize.height/PTM_RATIO)
-                );
-  groundBody->CreateFixture(&groundBox, 0);
-
-  // left
-  groundBox.Set(
-                b2Vec2(0,screenSize.height/PTM_RATIO),
-                b2Vec2(0,0)
-                );
-  groundBody->CreateFixture(&groundBox, 0);
-
-  // right
-  groundBox.Set(
-                b2Vec2((screenSize.width/PTM_RATIO),screenSize.height/PTM_RATIO),
-                b2Vec2((screenSize.width/PTM_RATIO),0)
-                );
-  groundBody->CreateFixture(&groundBox, 0);
+-(void) createEdge:(b2Vec2) v1 v2: (b2Vec2) v2
+{
+  b2BodyDef bodyDef;
+  b2Body*   body = world->CreateBody(&bodyDef);
+  b2EdgeShape edge;
+  edge.Set(v1, v2);
+  body->CreateFixture(&edge, 0);
 }
 
 -(void) addBox:(Box *)physicalView
@@ -77,7 +74,7 @@
   fixtureDef.shape       = &dynamicBox;
   fixtureDef.density     = 3.0f;
   fixtureDef.friction    = 0.5f;
-  fixtureDef.restitution = 0.5f; // 0 is a lead ball, 1 is a super bouncy ball
+  fixtureDef.restitution = 0.6f; // 0 is a lead ball, 1 is a super bouncy ball
   body->CreateFixture(&fixtureDef);
   body->SetType(b2_dynamicBody);
 
