@@ -8,12 +8,17 @@ class Overlay < UIView
 
   def setupScore
     @score = 500
-    labelFrame = CGRectMake(0, 0, self.bounds.size.width, 50)
+    labelFrame = CGRectMake(5, 0, self.bounds.size.width, 50)
     @scoreLabel = UILabel.alloc.initWithFrame(labelFrame)
     @scoreLabel.textColor = UIColor.whiteColor
-    @scoreLabel.backgroundColor = UIColor.blackColor
+    @scoreLabel.backgroundColor = UIColor.clearColor
     @scoreLabel.text = "Score: #{@score}"
+    @scoreLabel.setFont(font)
     self.addSubview @scoreLabel
+  end
+
+  def font
+    UIFont.fontWithName("Helvetica", size: 14)
   end
 
   def setupView
