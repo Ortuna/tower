@@ -1,15 +1,16 @@
 class Box
   def initWithFrame(frame)
     super
-    if self
-      self.layer.cornerRadius = 3.0
-      self.layer.masksToBounds = true
-      self.backgroundColor = backgroundImage
-      self.exclusiveTouch  = true
-    end
+    setupStyles if self
     self
   end
 
+  def setupStyles
+    self.layer.cornerRadius = 3.0
+    self.layer.masksToBounds = true
+    self.backgroundColor = backgroundImage
+    self.exclusiveTouch  = true
+  end
   def backgroundImage
     width, height = viewSize
     if width == 24 && height == 24

@@ -31,6 +31,7 @@ class Level < UIScrollView
     @world = World.new
     @world.setupWorld(self.contentSize.width, height: self.contentSize.height)
   end
+
   def setupTimer
     @timer = NSTimer.scheduledTimerWithTimeInterval(1.0/60.0,
       target:self,
